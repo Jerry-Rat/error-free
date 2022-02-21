@@ -1,7 +1,7 @@
 <!-- 内容 -->
 <template>
   <main>
-    <br />qwe<br />qwe<br />qwe<br />qwe<br />qwe<br /><br />qwe<br />qwe<br />qwe<br />
+    qwe<br />qwe<br />qwe<br />qwe<br />qwe<br />qwe<br />qwe<br />qwe<br />qwe<br />
   </main>
 </template>
 
@@ -14,7 +14,7 @@ export default {
 
 <style>
 main {
-  background-color: hsl(0deg 0% 100%);
+  background-color: var(--bs-white);
   min-height: calc(100vh - 65.5px);
 }
 </style>
