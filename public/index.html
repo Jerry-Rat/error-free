@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <!-- Bootstrap 的 CSS 文件 -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
@@ -13,5 +15,16 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    
+    <!-- JavaScript 文件是可选的。从以下两种建议中选择一个即可！ -->
+
+    <!-- 选项 1：包含 Popper 的 Bootstrap 集成包 -->
+    <script src="/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <!-- 选项 2：Popper 和 Bootstrap 的 JS 插件各自独立 -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
   </body>
 </html>
