@@ -1,6 +1,6 @@
 <!-- 底部信息 -->
 <template>
-  <footer>
+  <footer class="sticky-bottom">
     <div>底部内容</div>
     <a>a标签</a>
   </footer>

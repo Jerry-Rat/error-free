@@ -1,4 +1,6 @@
 <template>
   <router-view />
 </template>
-<style></style>
+<style>
+@import "assets/css/base.css";
+</style>
