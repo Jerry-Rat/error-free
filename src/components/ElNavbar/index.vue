@@ -21,7 +21,7 @@
         <ul
           class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
         >
-          <li><a href="#" class="nav-link px-2 link-secondary">首页</a></li>
+          <li><a href="/" class="nav-link px-2 link-secondary">首页</a></li>
           <li><a href="#" class="nav-link px-2 link-dark">问题</a></li>
           <li><a href="#" class="nav-link px-2 link-dark">关于</a></li>
         </ul>
@@ -36,8 +36,10 @@
         </form>
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-dark me-2">登录</button>
-          <button type="button" class="btn btn-warning">注册</button>
+          <a class="btn btn-outline-dark me-2" href="/login" role="button">
+            登录
+          </a>
+          <a class="btn btn-warning" href="/login" role="button"> 注册 </a>
         </div>
       </div>
     </div>

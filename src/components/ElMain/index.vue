@@ -53,22 +53,4 @@ main {
 .sidebarwidget-gap {
   margin-top: 1.5em;
 }
-.masonry-grid {
-  /* It is split into 3 columns */
-  column-count: 3;
-
-  /* The space between columns */
-  column-gap: 1rem;
-
-  /* Misc */
-  width: 100%;
-}
-
-.masonry-grid__item {
-  /* Prevent a column from breaking into multiple columns */
-  break-inside: avoid;
-
-  /* Misc */
-  margin-bottom: 1rem;
-}
 </style>

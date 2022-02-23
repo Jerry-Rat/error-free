@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Layout from "@/layout";
+import Login from "views/login/Login.vue";
+import User from "components/user/User.vue";
 
 /**
  * Note: 路由配置项
@@ -27,6 +29,30 @@ const routes = [
     path: "",
     component: Layout,
     hidden: true,
+    meta: {
+      title: "首页",
+      icon: "el-icon-eleme",
+    },
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: Login,
+    meta: {
+      title: "登录",
+      icon: "el-icon-eleme",
+    },
+  },
+  {
+    path: "/user",
+    name: "User",
+    component: User,
+    hidden: true,
+    meta: {
+      title: "用户",
+      icon: "el-icon-eleme",
+      requireAuth: true,
+    },
   },
   {
     path: "/401",
@@ -55,3 +81,8 @@ const router = createRouter({
 });
 
 export default router;
+
+router.beforeEach((to, from, next) => {
+  document.title = to.matched[0].meta.title;
+  next();
+});
