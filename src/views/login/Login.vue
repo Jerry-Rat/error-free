@@ -12,21 +12,23 @@
 
       <div class="form-floating">
         <input
-          type="email"
+          type="text"
           class="form-control"
-          id="floatingInput"
+          id="username"
+          v-model="username"
           placeholder="name@example.com"
         />
-        <label for="floatingInput">账号</label>
+        <label for="username">账号</label>
       </div>
       <div class="form-floating">
         <input
           type="password"
           class="form-control"
-          id="floatingPassword"
+          id="password"
+          v-model="password"
           placeholder="Password"
         />
-        <label for="floatingPassword">密码</label>
+        <label for="password">密码</label>
       </div>
 
       <div class="checkbox mb-3">
@@ -41,16 +43,37 @@
 </template>
 
 <script>
+import { login } from "api/user.js";
+import { setToken } from "@/utils/auth";
+
 export default {
   name: "Login",
   components: {},
+  data() {
+    return {
+      username: "",
+      password: "",
+    };
+  },
   methods: {
     login() {
-      this.$store.commit("setToken", "true"); //改变token状态
-      let redirect = decodeURIComponent(this.$route.query.redirect || "/"); //获取登录成功后要跳转的路由。
-      this.$router.push({
-        path: redirect,
-      });
+      login(this.username, this.password)
+        .then((res) => {
+          if (res.code != "200") {
+            alert(res.message);
+          } else {
+            setToken(res.data);
+            let redirect = decodeURIComponent(
+              this.$route.query.redirect || "/"
+            ); //获取登录成功后要跳转的路由。
+            this.$router.push({
+              path: redirect,
+            });
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
   },
 };

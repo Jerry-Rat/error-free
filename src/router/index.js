@@ -81,8 +81,3 @@ const router = createRouter({
 });
 
 export default router;
-
-router.beforeEach((to, from, next) => {
-  document.title = to.matched[0].meta.title;
-  next();
-});
