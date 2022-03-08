@@ -10,11 +10,14 @@ export default {
   components: {},
   methods: {
     test1() {
+      this.$store.commit("setIsLoading", true);
       test()
         .then((res) => {
+          this.$store.commit("setIsLoading", false);
           console.log(res);
         })
         .catch((error) => {
+          this.$store.commit("setIsLoading", false);
           console.log(error);
         });
     },

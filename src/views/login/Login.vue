@@ -57,6 +57,7 @@ export default {
   },
   methods: {
     login() {
+      this.$store.commit("setIsLoading", true);
       login(this.username, this.password)
         .then((res) => {
           if (res.status == 0) {
@@ -70,9 +71,11 @@ export default {
           } else {
             alert(res.message);
           }
+          this.$store.commit("setIsLoading", false);
         })
         .catch((error) => {
           console.log(error);
+          this.$store.commit("setIsLoading", false);
         });
     },
   },
