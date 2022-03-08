@@ -4,6 +4,7 @@ import { getToken } from "@/utils/auth";
 export default createStore({
   state: {
     token: getToken(),
+    isLoading: true,
   },
   mutations: {
     setToken: (state, token) => {

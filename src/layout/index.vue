@@ -1,5 +1,6 @@
 <template>
   <div>
+    <loading v-if="isLoading"></loading>
     <!-- 导航栏 -->
     <efNavbar />
     <!-- 内容 -->
@@ -10,15 +11,24 @@
 </template>
 
 <script>
-import ElNavbar from "components/ElNavbar";
-import ElMain from "components/ElMain";
-import ElFooter from "components/ElFooter";
+import header from "components/header";
+import main from "components/main";
+import footer from "components/footer";
+import loading from "components/loading";
+import store from "@/store";
+
 export default {
   name: "layout",
   components: {
-    efNavbar: ElNavbar,
-    efMain: ElMain,
-    efFooter: ElFooter,
+    efNavbar: header,
+    efMain: main,
+    efFooter: footer,
+    Loading: loading,
+  },
+  data() {
+    return {
+      isLoading: store.state.get("isLoading"),
+    };
   },
 };
 </script>

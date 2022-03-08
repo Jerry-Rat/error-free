@@ -59,9 +59,7 @@ export default {
     login() {
       login(this.username, this.password)
         .then((res) => {
-          if (res.code != "200") {
-            alert(res.message);
-          } else {
+          if (res.status == 0) {
             setToken(res.data);
             let redirect = decodeURIComponent(
               this.$route.query.redirect || "/"
@@ -69,6 +67,8 @@ export default {
             this.$router.push({
               path: redirect,
             });
+          } else {
+            alert(res.message);
           }
         })
         .catch((error) => {
